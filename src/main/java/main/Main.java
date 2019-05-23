@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.event.MouseEvent;
 import java.util.*;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
@@ -32,17 +33,27 @@ public class Main extends javax.swing.JFrame {
 
     private void cardBtnClicked(java.awt.event.MouseEvent evt) {
 
-        System.out.println("Stack:" + getStackSize());
-        System.out.println("Position:" + getSelectedPosition());
-        System.out.println("Hand:" + evt.getComponent().getAccessibleContext().getAccessibleName());
+        int stack = getStackSize();
+        String position = getSelectedPosition();
+        String hand = evt.getComponent().getAccessibleContext().getAccessibleName();
 
-        if (evt.getModifiers() == evt.BUTTON1_MASK) {
-            System.out.println("Left button pressed.");
+        if (evt.getModifiers() == MouseEvent.BUTTON1_MASK) {
+            openShowDialog(stack, position, hand);
+        } else if (evt.getModifiers() == MouseEvent.BUTTON3_MASK) {
+            openEditDialog(stack, position, hand);
         }
+    }
 
-        if (evt.getModifiers() == evt.BUTTON3_MASK) {
-            System.out.println("Right button pressed.");
-        }
+    public void openShowDialog(int stack, String position, String hand) {
+        System.out.println("openShowDialog Stack:" + stack);
+        System.out.println("openShowDialog Position:" + position);
+        System.out.println("openShowDialog Hand:" + hand);
+    }
+
+    public void openEditDialog(int stack, String position, String hand) {
+        System.out.println("openEditDialog Stack:" + stack);
+        System.out.println("openEditDialog Position:" + position);
+        System.out.println("openEditDialog Hand:" + hand);
     }
 
     private String getSelectedPosition() {
