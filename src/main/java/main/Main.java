@@ -1,8 +1,13 @@
 package main;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
 import java.awt.event.MouseEvent;
 import java.util.*;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 
 /**
@@ -37,6 +42,16 @@ public class Main extends javax.swing.JFrame {
         String position = getSelectedPosition();
         String hand = evt.getComponent().getAccessibleContext().getAccessibleName();
 
+        if (stack <= 0) {
+            JOptionPane.showMessageDialog(null, "Please type correct stack size !", "STACK", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (position == null) {
+            JOptionPane.showMessageDialog(null, "Please select your position !", "POSITION", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         if (evt.getModifiers() == MouseEvent.BUTTON1_MASK) {
             openShowDialog(stack, position, hand);
         } else if (evt.getModifiers() == MouseEvent.BUTTON3_MASK) {
@@ -48,12 +63,19 @@ public class Main extends javax.swing.JFrame {
         System.out.println("openShowDialog Stack:" + stack);
         System.out.println("openShowDialog Position:" + position);
         System.out.println("openShowDialog Hand:" + hand);
+
+        JDialog dialog = new showDialog(this, rootPaneCheckingEnabled, stack, position, hand);
+        dialog.setVisible(true);
+
     }
 
     public void openEditDialog(int stack, String position, String hand) {
         System.out.println("openEditDialog Stack:" + stack);
         System.out.println("openEditDialog Position:" + position);
         System.out.println("openEditDialog Hand:" + hand);
+
+        JDialog dialog = new editDialog(this, rootPaneCheckingEnabled, stack, position, hand);
+        dialog.setVisible(true);
     }
 
     private String getSelectedPosition() {
