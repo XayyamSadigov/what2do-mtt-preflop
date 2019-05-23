@@ -20,9 +20,46 @@ public class Main extends javax.swing.JFrame {
 
     private void addListener2Cards() {
         cards.forEach((btn) -> {
-            btn.addActionListener(this::cardBtnClicked);
+            btn.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    cardBtnClicked(evt);
+                }
+            });
         });
 
+    }
+
+    private void cardBtnClicked(java.awt.event.MouseEvent evt) {
+
+        System.out.println("Stack:" + getStackSize());
+        System.out.println("Position:" + getSelectedPosition());
+        System.out.println("Hand:" + evt.getComponent().getAccessibleContext().getAccessibleName());
+
+        if (evt.getModifiers() == evt.BUTTON1_MASK) {
+            System.out.println("Left button pressed.");
+        }
+
+        if (evt.getModifiers() == evt.BUTTON3_MASK) {
+            System.out.println("Right button pressed.");
+        }
+    }
+
+    private String getSelectedPosition() {
+        for (JToggleButton btn : positions) {
+            if (btn.isSelected()) {
+                return btn.getActionCommand();
+            }
+        }
+        return null;
+    }
+
+    private int getStackSize() {
+        try {
+            return Integer.parseInt(eStack.getText());
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -30,7 +67,6 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        
         btn_AA = new javax.swing.JButton();
 cards.add(btn_AA);
 btn_AKs = new javax.swing.JButton();
@@ -370,25 +406,25 @@ cards.add(btn_72o);
 btn_32o = new javax.swing.JButton();
 cards.add(btn_32o);
 
-        btn_utg = new javax.swing.JToggleButton();
-        positions.add(btn_utg);
-        btn_utg1 = new javax.swing.JToggleButton();
-        positions.add(btn_utg1);
-        btn_utg2 = new javax.swing.JToggleButton();
-        positions.add(btn_utg2);
-        btn_mp = new javax.swing.JToggleButton();
-        positions.add(btn_mp);
-        btn_hj = new javax.swing.JToggleButton();
-        positions.add(btn_hj);
-        btn_co = new javax.swing.JToggleButton();
-        positions.add(btn_co);
-        btn_bu = new javax.swing.JToggleButton();
-        positions.add(btn_bu);
-        btn_sb = new javax.swing.JToggleButton();
-        positions.add(btn_sb);
-        btn_bb = new javax.swing.JToggleButton();
-        positions.add(btn_bb);
-        eStack = new javax.swing.JTextField();
+btn_utg = new javax.swing.JToggleButton();
+positions.add(btn_utg);
+btn_utg1 = new javax.swing.JToggleButton();
+positions.add(btn_utg1);
+btn_utg2 = new javax.swing.JToggleButton();
+positions.add(btn_utg2);
+btn_mp = new javax.swing.JToggleButton();
+positions.add(btn_mp);
+btn_hj = new javax.swing.JToggleButton();
+positions.add(btn_hj);
+btn_co = new javax.swing.JToggleButton();
+positions.add(btn_co);
+btn_bu = new javax.swing.JToggleButton();
+positions.add(btn_bu);
+btn_sb = new javax.swing.JToggleButton();
+positions.add(btn_sb);
+btn_bb = new javax.swing.JToggleButton();
+positions.add(btn_bb);
+eStack = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("what2do mtt peflop");
@@ -398,51 +434,26 @@ cards.add(btn_32o);
         btn_AA.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_AA.setText("AA");
         btn_AA.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_AA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_AKs.setBackground(new java.awt.Color(153, 153, 0));
         btn_AKs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_AKs.setText("AKs");
         btn_AKs.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_AKs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_AQs.setBackground(new java.awt.Color(153, 153, 0));
         btn_AQs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_AQs.setText("AQs");
         btn_AQs.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_AQs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_AJs.setBackground(new java.awt.Color(153, 153, 0));
         btn_AJs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_AJs.setText("AJs");
         btn_AJs.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_AJs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_ATs.setBackground(new java.awt.Color(153, 153, 0));
         btn_ATs.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_ATs.setText("ATs");
         btn_ATs.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_ATs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_A9s.setBackground(new java.awt.Color(153, 153, 0));
         btn_A9s.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -453,11 +464,6 @@ cards.add(btn_32o);
         btn_A8s.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btn_A8s.setText("A8s");
         btn_A8s.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btn_A8s.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardBtnClicked(evt);
-            }
-        });
 
         btn_A7s.setBackground(new java.awt.Color(153, 153, 0));
         btn_A7s.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -1953,32 +1959,6 @@ cards.add(btn_32o);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cardBtnClicked(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardBtnClicked
-        System.out.println("Stack:" + getStackSize());
-        System.out.println("Position:" + getSelectedPosition());
-        System.out.println("Hand:" + evt.getActionCommand());
-        
-        
-
-    }//GEN-LAST:event_cardBtnClicked
-
-    private String getSelectedPosition() {
-        for (JToggleButton btn : positions) {
-            if (btn.isSelected()) {
-                return btn.getActionCommand();
-            }
-        }
-        return null;
-    }
-
-    private int getStackSize() {
-        try {
-            return Integer.parseInt(eStack.getText());
-        } catch (NumberFormatException e) {
-            return -1;
-        }
-    }
 
     private void positionBtnClicked(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_positionBtnClicked
         positions.forEach((btn) -> {

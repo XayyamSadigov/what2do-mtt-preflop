@@ -674,9 +674,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_AKs">
           <Properties>
@@ -693,9 +690,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_AQs">
           <Properties>
@@ -712,9 +706,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_AJs">
           <Properties>
@@ -731,9 +722,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_ATs">
           <Properties>
@@ -750,9 +738,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_A9s">
           <Properties>
@@ -785,9 +770,6 @@
               </Border>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cardBtnClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_A7s">
           <Properties>
