@@ -1,8 +1,5 @@
 package main;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
 import java.awt.event.MouseEvent;
 import java.util.*;
 import javax.swing.JButton;
@@ -16,9 +13,16 @@ import javax.swing.JToggleButton;
  */
 public class Main extends javax.swing.JFrame {
 
+    public static String db = "db.s3db";
+
     public Main() {
         initComponents();
         addListener2Cards();
+    }
+
+    public Main(String db) {
+        this();
+        this.db = db;
     }
 
     List<JButton> cards = new ArrayList<>();

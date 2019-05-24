@@ -22,7 +22,7 @@ public class Database {
     private static void Connect() {
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection("jdbc:sqlite:db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:" + Main.db);
             statement = connection.createStatement();
             System.out.println("Connection created.");
 
