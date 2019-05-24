@@ -4,7 +4,7 @@ package main;
  *
  * @author KhayyamS
  */
-public enum Options {
+public enum Option {
     FOLD(1),
     CALL(2),
     RAISE(3),
@@ -16,7 +16,7 @@ public enum Options {
 
     public final int id;
 
-    private Options(int id) {
+    private Option(int id) {
         this.id = id;
     }
 
