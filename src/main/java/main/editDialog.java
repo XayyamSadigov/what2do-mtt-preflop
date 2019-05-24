@@ -285,7 +285,8 @@ public class editDialog extends javax.swing.JDialog {
                 t_push.getText(),
                 t_vs_push.getText(),
                 t_info.getText())) {
-            JOptionPane.showMessageDialog(null, "Updated.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            JOptionPane.showMessageDialog(null, "The record updated.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -298,7 +299,10 @@ public class editDialog extends javax.swing.JDialog {
                 t_push.getText(),
                 t_vs_push.getText(),
                 t_info.getText())) {
-            JOptionPane.showMessageDialog(null, "Added.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            JOptionPane.showMessageDialog(null, "The record inserted.", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Record exists. Please edit.", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddActionPerformed
 

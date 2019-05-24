@@ -97,6 +97,10 @@ public class Database {
 
         try {
 
+            if (get(stack, position, hand) == null) {
+                add(stack, position, hand, rfi, vs_rfi, vs_3bet, vs_4bet, push, vs_push, info);
+            }
+
             String sql = "UPDATE 'hands' set "
                     + "position='" + position + "',"
                     + "hand='" + hand + "',"

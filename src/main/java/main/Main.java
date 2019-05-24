@@ -2032,10 +2032,9 @@ eStack = new javax.swing.JTextField();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-
-                if (args[0] != null) {
+                try {
                     new Main(args[0]).setVisible(true);
-                } else {
+                } catch (Exception e) {
                     new Main().setVisible(true);
                 }
             }
